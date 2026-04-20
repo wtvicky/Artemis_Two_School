@@ -1,7 +1,5 @@
 package com.senai.backend.artemis_two_school.Services;
 
-import com.senai.backend.artemis_two_school.Repositories.AlunoRepository;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +22,7 @@ public class TurmaService {
         return turmaRepository.findById(id).get();
     }
 
-    public List<Turma> listaTurma() {
+    public List<Turma> listarTurma() {
         return turmaRepository.findAll();
     }
 
@@ -36,11 +34,11 @@ public class TurmaService {
         return false;
     }
 
-    public Turma cadaastroTurma(Turma turma) {
+    public Turma cadastrarTurma(Turma turma) {
         return turmaRepository.save(turma);
     }
 
-    public Turma atualiuzarTurma(Integer id, Turma turma){
+    public Turma atualizarTurma(Integer id, Turma turma){
         Turma turmaRecuperada = buscarTurma(id);
         if (turmaRecuperada != null){
             turmaRecuperada.setId(id);
